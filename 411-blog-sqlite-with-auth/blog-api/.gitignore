@@ -1,0 +1,15 @@
+.serverless
+node_modules
+.webpack
+
+.vscode
+npm-debug.log*
+*.swp
+
+.env
+.envrc
+.history
+
+/buckets
+/pages
+request.sh

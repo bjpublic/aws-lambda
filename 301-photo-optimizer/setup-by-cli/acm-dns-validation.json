@@ -1,0 +1,17 @@
+{
+  "Changes": [
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "CABINET.lacti.link",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "SECRET_ANSWER.acm-validations.aws."
+          }
+        ]
+      }
+    }
+  ]
+}

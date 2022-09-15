@@ -1,0 +1,11 @@
+__pycache__
+venv
+.vscode
+
+*.swp
+.env
+.envrc
+.history
+
+.aws-sam
+samconfig.toml

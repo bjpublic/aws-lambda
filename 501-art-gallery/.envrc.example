@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# .envrc를 상위 디렉토리에서도 사용할 경우 source_up을 실행
+[ ! -z "$(type -t source_up)" ] && source_up
+
+# 좋아요 이벤트 로그와 Word2vec 모델을 공유하기 위한 S3 Bucket 이름
+export BUCKET_NAME="recommend-data-bucket"
+
+# 좋아요 이벤트를 `train`으로 전달하기 위한 SQS 대기열의 이름
+export LIKE_QUEUE_NAME="art-gallery-like-queue"

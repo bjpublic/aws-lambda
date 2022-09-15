@@ -1,0 +1,29 @@
+{
+  "CallerReference": "photo-optimizer",
+  "Comment": "사진 최적화",
+  "Enabled": true,
+  "DefaultRootObject": "index.html",
+  "Origins": {
+    "Quantity": 1,
+    "Items": [
+      {
+        "Id": "photo-optimizer-bucket",
+        "DomainName": "PHOTO_OPTIMIZER_BUCKET_NAME.s3.ap-northeast-2.amazonaws.com",
+        "S3OriginConfig": {
+          "OriginAccessIdentity": "origin-access-identity/cloudfront/EXXXXXXXXXXXXX"
+        }
+      }
+    ]
+  },
+  "DefaultCacheBehavior": {
+    "TargetOriginId": "photo-optimizer-bucket",
+    "ViewerProtocolPolicy": "redirect-to-https",
+    "MinTTL": 0,
+    "ForwardedValues": {
+      "QueryString": false,
+      "Cookies": {
+        "Forward": "none"
+      }
+    }
+  }
+}

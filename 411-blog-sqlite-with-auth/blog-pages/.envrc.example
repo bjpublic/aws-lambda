@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# .envrc를 상위 디렉토리에서도 사용할 경우 source_up을 실행
+[ ! -z "$(type -t source_up)" ] && source_up
+
+# 구글 OAUTH 클라이언트 ID
+export REACT_APP_GOOGLE_CLIENT_ID="CLIENT_ID.apps.googleusercontent.com"

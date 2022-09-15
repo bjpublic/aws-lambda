@@ -1,0 +1,37 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Parameters:
+  BucketName:
+    Type: String
+
+Resources:
+  RecommendFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      MemorySize: 2048
+      Timeout: 29
+      Tracing: Active
+      Architectures:
+        - x86_64
+      Events:
+        RecommendApi:
+          Type: HttpApi
+          Properties:
+            Path: /recommend-api/{id}
+            Method: get
+      Environment:
+        Variables:
+          BUCKET_NAME: !Ref BucketName
+      Policies:
+        - S3ReadPolicy:
+            BucketName: !Ref BucketName
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: .
+      DockerTag: v1
+
+Outputs:
+  RecommendApi:
+    Value: !Sub "https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com/recommend-api/"

@@ -1,0 +1,51 @@
+{
+  "name": "411-blog-sqlite-with-auth-blog-page",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "https://API_ID.execute-api.AWS_REGION.amazonaws.com",
+  "dependencies": {
+    "@types/node": "14",
+    "@types/react": "17",
+    "@types/react-dom": "17",
+    "react": "17",
+    "react-dom": "17",
+    "react-google-login": "5.2.2",
+    "react-nl2br": "1.0.3",
+    "react-router-dom": "6.3.0",
+    "react-scripts": "5.0.1",
+    "typescript": "4.7.4",
+    "web-vitals": "2.1.4"
+  },
+  "scripts": {
+    "start": "cross-env PORT=4000 REACT_APP_SERVER= react-scripts start",
+    "serve": "serve -p 5000 -s build",
+    "build:local": "cross-env REACT_APP_SERVER=http://localhost:3000 react-scripts build",
+    "build": "cross-env REACT_APP_SERVER= react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "cross-env": "7.0.3"
+  },
+  "optionalDependencies": {
+    "serve": "14.0.1"
+  }
+}

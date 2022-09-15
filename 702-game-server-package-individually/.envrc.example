@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# .envrc를 상위 디렉토리에서도 사용할 경우 source_up을 실행
+[ ! -z "$(type -t source_up)" ] && source_up
+
+# 게임 서버를 실행할 VPC 이름
+export VPC_NAME="vpc-game"
+
+# 게임 서버를 실행할 VPC의 CIDR Block
+export VPC_CIDR="10.0.0.0/16"
+
+# 퍼블릿 서브넷 1번의 CIDR Block
+export PUBLIC_SUBNET1_CIDR="10.0.0.0/20"
+
+# 퍼블릿 서브넷 2번의 CIDR Block
+export PUBLIC_SUBNET2_CIDR="10.0.32.0/20"
+
+# 프라이빗 서브넷 1번의 CIDR Block
+export PRIVATE_SUBNET1_CIDR="10.0.16.0/20"
+
+# 프라이빗 서브넷 2번의 CIDR Block
+export PRIVATE_SUBNET2_CIDR="10.0.48.0/20"
+
+# 매칭과 게임 이벤트 대기열을 위해 사용할 Redis 인스턴스 이름
+export REDIS_NAME="lacti-game-redis"
+
+# Redis 인스턴스를 위한 서브넷 그룹 이름
+export REDIS_SUBNET_GROUP_NAME="vpc-game-private-subnet-group"
+
+# WebSocket API 사용자 지정 도메인에 부여할 루트 도메인
+export ROOT_DOMAIN=lacti.link
+
+# WebSocket API 사용자 지정 도메인에 부여할 서브 도메인
+export SUB_DOMAIN=snake-ws

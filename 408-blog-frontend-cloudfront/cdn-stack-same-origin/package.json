@@ -1,0 +1,19 @@
+{
+  "name": "408-blog-frontend-cloudfront-cdn-stack-same-origin",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "upload": "sls s3sync",
+    "deploy": "sls deploy"
+  },
+  "author": "jaeyoung.choi <lactrious@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-s3-sync": "3.0.0",
+    "ts-node": "10.9.1",
+    "typescript": "4.7.4"
+  },
+  "optionalDependencies": {
+    "serverless": "3.21.0"
+  }
+}

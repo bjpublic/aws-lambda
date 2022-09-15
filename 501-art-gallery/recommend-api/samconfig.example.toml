@@ -1,0 +1,12 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "art-gallery-recommend-api"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-POSTFIX_ID"
+s3_prefix = "art-gallery-recommend-api"
+region = "AWS_REGION"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "BucketName=\"recommend-data-bucket\""
+image_repositories = ["RecommendFunction=ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/REPO_NAME"]

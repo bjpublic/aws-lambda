@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# .envrc를 상위 디렉토리에서도 사용할 경우 source_up을 실행
+[ ! -z "$(type -t source_up)" ] && source_up
+
+# 잠금을 위해 사용할 Redis 인스턴스 이름
+export REDIS_NAME="lacti-simple-blog-redis"
+
+# SQLite 데이터베이스 파일을 보관할 S3 Bucket 이름
+export BUCKET_NAME="simple-blog-sqlite-db"
+
+# JWT의 유효성 검증을 위한 비밀 키
+export JWT_SECRET_KEY="verysecret"
+
+# 로그인을 허용할 이메일 주소
+export ADMIN_EMAIL="admin@lacti.link"

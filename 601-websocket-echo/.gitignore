@@ -1,0 +1,10 @@
+.serverless
+node_modules
+.webpack
+
+npm-debug.log*
+*.swp
+
+.env
+.envrc
+.history

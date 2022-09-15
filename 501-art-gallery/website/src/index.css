@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.CookieAgreement {
+  background-color: lightyellow;
+  padding: 8px;
+  word-break: keep-all;
+}
+.CookieAgreement button {
+  margin: 4px;
+}
+
+.Page {
+  width: 80vw;
+  margin: auto;
+  text-align: center;
+}
+
+.SearchBox {
+  font-size: 20px;
+  width: 85%;
+  margin: 2rem 0rem;
+}
+
+.PictureList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2vw;
+  row-gap: 6vh;
+  text-align: center;
+}
+
+.PictureList img {
+  min-width: 20vw;
+  max-width: 100%;
+}
+
+.PictureDetail {
+  margin: 2rem 0rem;
+}
+
+.PictureDetail dl {
+  text-align: left;
+}
+
+.PictureDetail dt {
+  font-weight: bold;
+}
+
+.PictureDetail dd {
+  margin-bottom: 6px;
+}
+
+.PictureDetail img {
+  min-width: 50vw;
+}
+
+@media (max-width: 800px) {
+  * {
+    font-size: 96%;
+  }
+  .PictureList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .PictureDetail img {
+    min-width: 80vw;
+  }
+}
+
+.Buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Recommendation {
+  margin-top: 8vh;
+}
+
+.ThanksTo {
+  margin: 12vh 0 6vh 0;
+  font-size: 92%;
+}

@@ -1,0 +1,37 @@
+{
+  "name": "411-blog-sqlite-with-auth-blog-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.ts",
+  "scripts": {
+    "start": "sls offline",
+    "build": "sls package",
+    "deploy": "sls deploy"
+  },
+  "author": "jaeyoung.choi <lactrious@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@serverless/typescript": "3.21.0",
+    "@types/aws-lambda": "8.10.102",
+    "@types/better-sqlite3": "7.6.0",
+    "@types/mime-types": "2.1.1",
+    "@types/node": "14",
+    "fork-ts-checker-webpack-plugin": "7.2.13",
+    "serverless-offline": "9.2.0",
+    "serverless-s3-local": "0.6.22",
+    "serverless-webpack": "5.8.0",
+    "ts-loader": "9.3.1",
+    "ts-node": "10.9.1",
+    "typescript": "4.7.4",
+    "webpack": "5.74.0"
+  },
+  "dependencies": {
+    "@redis/client": "1.2.0",
+    "better-sqlite3": "7.6.2",
+    "fast-jwt": "1.7.0",
+    "mime-types": "2.1.35"
+  },
+  "optionalDependencies": {
+    "serverless": "3.21.0"
+  }
+}

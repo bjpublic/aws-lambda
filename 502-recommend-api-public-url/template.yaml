@@ -1,0 +1,37 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  art-gallery-predict-function-url
+  Sample SAM Template for art-gallery-predict
+
+Parameters:
+    BucketName:
+        Type: String
+
+Resources:
+  RecommendFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      MemorySize: 2048
+      Timeout: 60
+      Architectures:
+        - x86_64
+      Environment:
+        Variables:
+          BUCKET_NAME: !Ref BucketName
+      Policies:
+        - S3ReadPolicy:
+            BucketName: !Ref BucketName
+      FunctionUrlConfig:
+        AuthType: NONE
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: .
+      DockerTag: python3.9
+
+Outputs:
+  RecommendFunctionUrlEndpoint:
+    Description: "API Gateway endpoint URL for Recommend function"
+    Value:
+        Fn::GetAtt: RecommendFunctionUrl.FunctionUrl

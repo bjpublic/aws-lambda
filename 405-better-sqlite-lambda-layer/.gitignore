@@ -1,0 +1,13 @@
+.serverless
+node_modules
+
+.vscode
+npm-debug.log*
+*.swp
+
+.env
+.envrc
+.history
+
+/nodejs
+/layer.zip

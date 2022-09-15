@@ -1,0 +1,57 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  OAI:
+    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+    Properties:
+      CloudFrontOriginAccessIdentityConfig:
+        Comment: 사진 최적화 서비스용 OAI
+  PhotoBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: PHOTO_OPTIMIZER_BUCKET_NAME
+  PhotoBucketOAIPolicy:
+    Type: AWS::S3::BucketPolicy
+    DependsOn: PhotoBucket
+    Properties:
+      Bucket: !Ref PhotoBucket
+      PolicyDocument:
+        Statement:
+          - Action: s3:GetObject
+            Effect: Allow
+            Resource: arn:aws:s3:::PHOTO_OPTIMIZER_BUCKET_NAME/*
+            Principal:
+              CanonicalUser: !GetAtt OAI.S3CanonicalUserId
+  PhotoCdn:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Enabled: true
+        DefaultRootObject: index.html
+        Origins:
+          - Id: S3Origin
+            DomainName: PHOTO_OPTIMIZER_BUCKET_NAME.s3.ap-northeast-2.amazonaws.com
+            S3OriginConfig:
+              OriginAccessIdentity:
+                !Join ["", [origin-access-identity/cloudfront/, !Ref OAI]]
+        DefaultCacheBehavior:
+          ForwardedValues:
+            QueryString: false
+          TargetOriginId: S3Origin
+          ViewerProtocolPolicy: redirect-to-https
+        Aliases:
+          - photo.lacti.link
+        ViewerCertificate:
+          AcmCertificateArn: arn:aws:acm:us-east-1:ACCOUNT_ID:certificate/aebdbfab-5746-48f6-9dd4-8c305a7f95a1
+          MinimumProtocolVersion: TLSv1
+          SslSupportMethod: sni-only
+  PhotoCdnDns:
+    Type: AWS::Route53::RecordSet
+    DependsOn: PhotoCdn
+    Properties:
+      AliasTarget:
+        DNSName: !GetAtt PhotoCdn.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2
+      HostedZoneName: lacti.link.
+      Name: photo.lacti.link
+      Type: A

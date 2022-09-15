@@ -1,0 +1,5 @@
+gensim==4.2.0
+
+# 최신 버전을 사용해도 상관 없지만, Python Lambda가 제공하는 버전을 사용한다.
+# https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html
+boto3==1.20.32

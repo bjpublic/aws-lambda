@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  font-size: 11px;
+}
+
+span.Result {
+  display: block;
+  margin-top: 5vh;
+  text-align: center;
+}
+span.Help {
+  display: block;
+  margin: 1vh 0;
+  text-align: center;
+}
+
+table.BoardView {
+  margin: auto;
+  margin-top: 2vh;
+  border: 1px solid black;
+  border-width: 1px 1px 0 0;
+}
+table.BoardView td {
+  width: 16px;
+  height: 16px;
+  border: 1px solid black;
+  border-width: 0 0 1px 1px;
+}
+
+span.Help i {
+  display: inline-block;
+  margin-top: 4px;
+  width: 12px;
+  height: 12px;
+  position: relative;
+  top: 1px;
+}
+span.Help i.Apple,
+table.BoardView td.Apple {
+  background-color: lightpink;
+}
+span.Help i.Me,
+table.BoardView td.Me {
+  background-color: lightgreen;
+}
+span.Help i.Enemy,
+table.BoardView td.Enemy {
+  background-color: lightblue;
+}
+
+table.Stick {
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4vh;
+}
+table.Stick td {
+  font-size: 24px;
+  text-align: center;
+  width: 48px;
+  height: 48px;
+}
+table.Stick td.Arrow {
+  cursor: pointer;
+}
+table.Stick td.Arrow:active {
+  background-color: grey;
+}

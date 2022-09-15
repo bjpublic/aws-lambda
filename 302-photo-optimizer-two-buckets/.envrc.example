@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# .envrc를 상위 디렉토리에서도 사용할 경우 source_up을 실행
+[ ! -z "$(type -t source_up)" ] && source_up
+
+# 최적화된 사진을 업로드하기 위한 S3 Bucket 이름
+export BUCKET_NAME=lacti-photo-optimizer
+
+# CloudFront에 부여할 루트 도메인
+export ROOT_DOMAIN=lacti.link
+
+# CloudFront에 부여할 서브 도메인
+export SUB_DOMAIN=photo-optimizer
+
+# CloudFront가 사용할 도메인에 대한 인증서. us-east-1에 위치해야 한다.
+export ACM_CERTIFICATE_ARN=arn:aws:acm:us-east-1:ACCOUNT_ID:certificate/CERTIFICATE_UUID

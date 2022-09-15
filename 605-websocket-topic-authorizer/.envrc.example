@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# .envrc를 상위 디렉토리에서도 사용할 경우 source_up을 실행
+[ ! -z "$(type -t source_up)" ] && source_up
+
+# 사용자-연결 관계를 관리할 DynamoDB 테이블 이름
+export USER_CONNECTION_TABLE_NAME="wt-user-connection"
+
+# 사용자-주제 관계를 관리할 DynamoDB 테이블 이름
+export USER_TOPIC_TABLE_NAME="wt-user-topic"
+
+# 주제-연결 관계를 관리할 DynamoDB 테이블 이름
+export TOPIC_CONNECTION_TABLE_NAME="wt-topic-connection"

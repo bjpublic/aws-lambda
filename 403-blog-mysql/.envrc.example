@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# .envrc를 상위 디렉토리에서도 사용할 경우 source_up을 실행
+[ ! -z "$(type -t source_up)" ] && source_up
+
+# MySQL 루트 계정의 USER를 지정한다.
+export MYSQL_ROOT_USER="root"
+
+# MySQL 루트 계정의 암호를 지정한다.
+export MYSQL_ROOT_PASSWORD="v!e#ryv!er#ys!ec#ret"

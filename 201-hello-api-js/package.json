@@ -1,0 +1,13 @@
+{
+  "name": "201-hello-api-js",
+  "version": "1.0.0",
+  "main": "handler.js",
+  "scripts": {
+    "deploy": "sls deploy"
+  },
+  "author": "jaeyoung.choi <lactrious@gmail.com>",
+  "license": "ISC",
+  "optionalDependencies": {
+    "serverless": "3.21.0"
+  }
+}
